@@ -1,0 +1,147 @@
+$dark-blue: #1a2236;
+$light-blue: #2a3a56;
+$accent-blue: #3b82f6;
+$text-light: #e2e8f0;
+$text-muted: #94a3b8;
+$success-color: #22c55e;
+$pending-color: #f59e0b;
+$danger-color: #ef4444;
+$border-color: #334155;
+
+.home-container {
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: $dark-blue;
+  min-height: 100vh;
+  color: $text-light;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0;
+      background: linear-gradient(90deg, $accent-blue, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  
+  .add-btn {
+    background-color: $accent-blue;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    
+    span {
+      margin-right: 0.4rem;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+    
+    &:hover {
+      background-color: darken($accent-blue, 8%);
+    }
+  }
+  
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    border-radius: 0.5rem;
+    background-color: $light-blue;
+    text-align: center;
+    
+    .empty-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.7;
+    }
+    
+    p {
+      color: $text-muted;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba($accent-blue, 0.2);
+      border-top-color: $accent-blue;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      color: $text-muted;
+    }
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+  }
+  
+  .modal {
+    background-color: $light-blue;
+    border-radius: 0.5rem;
+    width: 90%;
+    max-width: 500px;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+}

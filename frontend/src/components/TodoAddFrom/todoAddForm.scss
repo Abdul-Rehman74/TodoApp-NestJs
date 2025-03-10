@@ -1,0 +1,156 @@
+$dark-blue: #1a2236;
+$light-blue: #2a3a56;
+$lighter-blue: #3a4a66;
+$accent-blue: #3b82f6;
+$text-light: #e2e8f0;
+$text-muted: #94a3b8;
+$success-color: #22c55e;
+$danger-color: #ef4444;
+$border-color: #334155;
+
+.add-todo-form {
+  padding: 1.5rem;
+  color: $text-light;
+  
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, $accent-blue, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .close-btn {
+      background: none;
+      border: none;
+      color: $text-muted;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: $text-light;
+      }
+    }
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    
+    label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: $text-muted;
+    }
+    
+    input[type="text"],
+    textarea {
+      padding: 0.75rem;
+      border-radius: 0.25rem;
+      border: 1px solid $border-color;
+      background-color: $lighter-blue;
+      color: $text-light;
+      font-size: 1rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      
+      &:focus {
+        outline: none;
+        border-color: $accent-blue;
+        box-shadow: 0 0 0 2px rgba($accent-blue, 0.2);
+      }
+      
+      &::placeholder {
+        color: darken($text-muted, 15%);
+      }
+      
+      &.error {
+        border-color: $danger-color;
+      }
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    
+    .error-message {
+      color: $danger-color;
+      font-size: 0.8rem;
+      margin-top: 0.25rem;
+    }
+    
+    &.checkbox-group {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.75rem;
+      
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: $accent-blue;
+        cursor: pointer;
+      }
+      
+      label {
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+    
+    button {
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.25rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      
+      &.cancel-btn {
+        background-color: transparent;
+        border: 1px solid $border-color;
+        color: $text-muted;
+        
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.05);
+          color: $text-light;
+        }
+      }
+      
+      &.submit-btn {
+        background-color: $accent-blue;
+        border: none;
+        color: white;
+        
+        &:hover {
+          background-color: darken($accent-blue, 8%);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,149 @@
+$dark-blue: #1a2236;
+$light-blue: #2a3a56;
+$accent-blue: #3b82f6;
+$text-light: #e2e8f0;
+$text-muted: #94a3b8;
+$success-color: #22c55e;
+$pending-color: #f59e0b;
+$border-color: #334155;
+
+.todo-item {
+  background-color: $light-blue;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-left: 4px solid $pending-color;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  &.completed {
+    border-left-color: $success-color;
+    background-color: rgba($light-blue, 0.7);
+  }
+  
+  .todo-content {
+    flex: 1;
+    padding-right: 1rem;
+  }
+  
+  .todo-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text-light;
+    flex: 1;
+    
+    &.strike-through {
+      text-decoration: line-through;
+      color: $text-muted;
+    }
+  }
+  
+  .todo-description {
+    color: $text-muted;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 1.8rem;
+    line-height: 1.5;
+  }
+  
+  .status-badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    display: inline-block;
+    
+    &.completed {
+      background-color: rgba($success-color, 0.2);
+      color: $success-color;
+    }
+    
+    &.pending {
+      background-color: rgba($pending-color, 0.2);
+      color: $pending-color;
+    }
+  }
+  
+  .todo-status {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    
+    .checkbox {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 2px solid $text-muted;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      
+      &.checked {
+        background-color: $success-color;
+        border-color: $success-color;
+        color: white;
+        font-size: 0.7rem;
+        font-weight: bold;
+      }
+      
+      &:hover {
+        border-color: $accent-blue;
+      }
+    }
+  }
+  
+  .todo-actions {
+    display: flex;
+    gap: 0.5rem;
+    
+    button {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background-color: rgba(255, 255, 255, 0.1);
+      
+      .action-icon {
+        font-size: 0.9rem;
+      }
+      
+      &.edit-btn {
+        color: $accent-blue;
+        
+        &:hover {
+          background-color: rgba($accent-blue, 0.2);
+        }
+      }
+      
+      &.delete-btn {
+        color: $text-muted;
+        
+        &:hover {
+          background-color: rgba(255, 59, 48, 0.2);
+          color: #ff3b30;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+$dark-blue: #1a2236;
+$light-blue: #2a3a56;
+$accent-blue: #3b82f6;
+$text-light: #e2e8f0;
+$text-muted: #94a3b8;
+$danger-color: #ef4444;
+$border-color: #334155;
+
+.auth-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+}
+
+.auth-card {
+  background-color: $light-blue;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.3s ease;
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+    background: linear-gradient(90deg, $accent-blue, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: $text-light;
+    font-weight: 500;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: rgba($dark-blue, 0.6);
+    border: 1px solid $border-color;
+    border-radius: 0.5rem;
+    color: $text-light;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    
+    &::placeholder {
+      color: $text-muted;
+    }
+    
+    &:focus {
+      outline: none;
+      border-color: $accent-blue;
+    }
+  }
+}
+
+.auth-btn {
+  width: 100%;
+  background-color: $accent-blue;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: darken($accent-blue, 8%);
+  }
+  
+  &:disabled {
+    background-color: rgba($accent-blue, 0.6);
+    cursor: not-allowed;
+  }
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: $text-muted;
+  
+  p {
+    margin: 0;
+  }
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: $accent-blue;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    color: lighten($accent-blue, 10%);
+  }
+}
+
+.error-message {
+  background-color: rgba($danger-color, 0.1);
+  color: $danger-color;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  animation: fadeIn 0.2s ease;
+}
+
+.spinner-small {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

@@ -1,0 +1,10 @@
+$dark-blue: #1a2236;
+
+.auth-wrapper {
+  min-height: 100vh;
+  background-color: $dark-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}

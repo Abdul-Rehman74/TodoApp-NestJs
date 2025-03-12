@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const userName = useSelector((state) => state.user?.user?.user?.username) || "Abdul Rehman Test";
+  const userName = useSelector((state) => state.user?.user?.name) || "Abdul Rehman Test";
   const dispatch= useDispatch();
   const navigate = useNavigate();
   const token = useSelector((state) => state.user?.token);

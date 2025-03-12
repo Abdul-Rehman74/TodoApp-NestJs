@@ -10,8 +10,9 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         setUser: (state, action) => {
-            state.user = action.payload;
-            state.token = action.payload.jwt;
+            console.log('Payload :' ,action.payload )
+            state.user = action.payload.user;
+            state.token = action.payload.access_token;
         },
         logoutUser: (state) => {
             state.user = null;

@@ -5,7 +5,7 @@ import { registerUser } from "../../services/auth";
 const SignUpComponent = ({ onLoginClick, onSignupSuccess }) => {
   const [formData, setFormData] = useState({
     email: '',
-    username: '',
+    name: '',
     password: '',
     confirmPassword: ''
   });
@@ -68,9 +68,9 @@ const SignUpComponent = ({ onLoginClick, onSignupSuccess }) => {
             <label htmlFor="username">Username</label>
             <input
               type="text"
-              id="username"
-              name="username"
-              value={formData.username}
+              id="name"
+              name="name"
+              value={formData.name}
               onChange={handleChange}
               required
               placeholder="Choose a username"

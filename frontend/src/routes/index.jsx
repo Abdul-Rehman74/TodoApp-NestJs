@@ -17,9 +17,9 @@ const AppRoutes = () => {
           {/* {routes.map((route, index) => (
             <Route key={index} path={route.path} element={route.element} />
           ))} */}
-          {/* <Route element={<ProtectedRoute />}> */}
+          <Route element={<ProtectedRoute />}>
             <Route path="/home" element={<Home />} />
-          {/* </Route> */}
+          </Route>
           <Route path="/auth" element={<Auth />} />
         </Route>
       </Routes>
